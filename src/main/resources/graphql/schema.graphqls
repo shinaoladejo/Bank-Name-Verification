@@ -1,0 +1,26 @@
+type Query{
+    getAccountName(getAccountNameRequest: GetAccountNameRequest!):String
+}
+type Mutation{
+    registerUser(registrationRequest: RegistrationRequest):RegistrationResponse
+    addBankAccount(addBankAccountRequest: AddBankAccountRequest):String
+}
+
+type RegistrationResponse{
+    name: String
+    message: String
+}
+
+input RegistrationRequest{
+    name:String!
+}
+input GetAccountNameRequest{
+    bankCode:String!
+    accountNumber:String!
+    accountName:String
+}
+input AddBankAccountRequest{
+    accountNumber:String!
+    accountName:String!
+    bankCode:String!
+}
