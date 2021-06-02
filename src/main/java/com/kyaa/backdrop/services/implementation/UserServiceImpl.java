@@ -29,7 +29,7 @@ public class UserServiceImpl implements UserService {
     @Override
     public RegistrationResponse register(RegistrationRequest registrationRequest) {
         if (userRepository.findUserByNameIgnoreCase(registrationRequest.name()).isPresent())throw new UserException("user with " +
-                registrationRequest.name()+" already exist");
+                registrationRequest.name()+" already exists");
         User user = User.builder()
                 .name(registrationRequest.name())
                 .build();
