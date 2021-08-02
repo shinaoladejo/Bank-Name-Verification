@@ -36,7 +36,7 @@ public class UserServiceImpl implements UserService {
         User savedUser = userRepository.save(user);
         RegistrationResponse response = new RegistrationResponse();
         response.setName(savedUser.getName());
-        response.setMessage("Registration Successful");
+        response.setMessage("Registration was successful");
         return response;
     }
 
