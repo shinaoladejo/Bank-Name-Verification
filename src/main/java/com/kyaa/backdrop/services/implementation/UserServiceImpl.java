@@ -74,7 +74,7 @@ public class UserServiceImpl implements UserService {
     public boolean verifyNames(String firstName, String secondName) {
         LevenshteinDistance ld = new LevenshteinDistance();
         int distance = ld.apply(firstName.toLowerCase(), secondName.toLowerCase());
-        return distance<=2;
+        return distance<= 2;
     }
 
     @Override
