@@ -24,7 +24,7 @@ import java.io.IOException;
 @Service
 @RequiredArgsConstructor
 public class UserServiceImpl implements UserService {
-    private final UserRepository userRepository;
+//    private final UserRepository userRepository;
     private final String key = "sk_live_477dc8ab7aee59ed474800055c0f90594671514c";
     @Override
     public RegistrationResponse register(RegistrationRequest registrationRequest) {
