@@ -24,16 +24,16 @@ public class GlobalExceptionHandler {
         return new ResponseEntity<>(apiResponse, HttpStatus.BAD_REQUEST);
     }
 
-//    @ExceptionHandler(IOException.class)
-//    public ResponseEntity<ApiResponse> ioException(IOException ioException,
-//                                                             HttpServletRequest httpServletRequest){
-//        ApiResponse apiResponse = ApiResponse.builder()
-//                .message(ioException.getMessage())
-//                .httpStatus(HttpStatus.BAD_REQUEST)
-//                .path(httpServletRequest.getRequestURI())
-//                .statusCode(HttpStatus.BAD_REQUEST.value())
-//                .zonedDateTime(ZonedDateTime.now())
-//                .build();
-//        return new ResponseEntity<>(apiResponse, HttpStatus.BAD_REQUEST);
-//    }
+    @ExceptionHandler(IOException.class)
+    public ResponseEntity<ApiResponse> ioException(IOException ioException,
+                                                             HttpServletRequest httpServletRequest){
+        ApiResponse apiResponse = ApiResponse.builder()
+                .message(ioException.getMessage())
+                .httpStatus(HttpStatus.BAD_REQUEST)
+                .path(httpServletRequest.getRequestURI())
+                .statusCode(HttpStatus.BAD_REQUEST.value())
+                .zonedDateTime(ZonedDateTime.now())
+                .build();
+        return new ResponseEntity<>(apiResponse, HttpStatus.BAD_REQUEST);
+    }
 }
